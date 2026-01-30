@@ -1,0 +1,1 @@
+Ambtion box project have used signup,login page for the user authentication for secure user aceess and home page taking the user input of (location ,rating,company_type) to show the clean and analyize data  to the user. the project give the usefull insightes to the user about best companys acccroding to their requirement.    
