@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Company Search</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            background-image: url("/static/images/homebg.png");
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .glass-container {
+            width: 520px;
+            height: 520px;
+            padding: 35px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            text-align: center;
+        }
+
+        h2 {
+            color: #ffffff;
+            margin-bottom: 25px;
+        }
+
+        select {
+            width: 100%;
+            padding: 13px;
+            margin-bottom: 18px;
+            border-radius: 10px;
+            border: none;
+            outline: none;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background-color: #ffffff;
+            color: #0f4c81;
+            font-size: 16px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #e6e6e6;
+        }
+
+        .checkbox-group {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            color: #ffffff;
+            font-size: 15px;
+        }
+
+        .checkbox-group label {
+            cursor: pointer;
+        }
+
+        .checkbox-group input {
+            margin-right: 6px;
+            cursor: pointer;
+        }
+        .msg{
+            color: red;
+            margin-bottom: 20px;
+            font-size: 20px;
+            text-transform: capitalize;
+        }
+    </style>
+</head>
+<body>
+
+<div class="glass-container">
+    <h2>Search Companies</h2>
+    <p class="msg"> {{mssg}} </p>
+    <form method="POST">
+        <!-- Dropdown Inputs -->
+        <select required name="location">
+            <option disabled selected>Select Location</option>
+            <option>Jaipur</option>
+            <option>Banglore</option>
+            <option>chennai</option>
+            <option>gurgoan</option>
+            <option>Ahmedabaad</option>
+            <option>hyderabaad</option>
+            <option>indore</option>
+            <option>navimumbai</option>
+            <option>lucknow</option>
+            <option>Mumbai</option>
+            <option>new delhi</option>
+            <option>noida</option>
+            <option>pune</option>
+        </select>
+
+        <select required name="rating">
+            <option disabled selected>Select Rating</option>
+            <option>1+</option>
+            <option>2+</option>
+            <option>3+</option>
+            <option>4+</option>
+        </select>
+
+        <select required name="company_type">
+
+
+            <option disabled selected>Select Company Type</option>
+            <option>Consumer Electronics & Appliances </option>
+            <option>Fashion & Textile</option>
+            <option>Banking </option>
+            <option>Recruitment</option>
+            <option>Electrical Equipment</option>
+            <option>BPO</option>
+            <option>Pharma</option>
+            <option>Insurance </option>
+            <option>Automobile</option>
+            <option> Financial Services </option>
+            <option>  Recruitment  </option>
+            <option>  Chemicals  </option>
+            <option>  Internet  </option>
+            <option> Industrial Machinery </option>
+            <option> Education & Training  </option>
+            <option> Pharma  </option>
+            <option>  Hospitality  </option>
+            <option>  Iron & Steel </option>
+
+        </select>
+
+        <button type="submit">Search</button>
+
+        <!-- Checkboxes -->
+        <div class="checkbox-group">
+            <label>
+                <input type="checkbox" id="tableCheck" onclick="toggleCheckbox('table')" name="table">
+                Show Table
+            </label>
+
+            <label>
+                <input type="checkbox" id="vizCheck" onclick="toggleCheckbox('viz')" name="visual">
+                Show Visualization
+            </label>
+        </div>
+    </form>
+</div>
+
+<script>
+    function toggleCheckbox(type) {
+        const table = document.getElementById("tableCheck");
+        const viz = document.getElementById("vizCheck");
+
+        if (type === "table") {
+            table.checked = true;
+            viz.checked = false;
+        } else {
+            viz.checked = true;
+            table.checked = false;
+        }
+    }
+</script>
+
+</body>
+</html>
+
